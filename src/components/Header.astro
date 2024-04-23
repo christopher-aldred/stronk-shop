@@ -1,22 +1,18 @@
 ---
-import Logo from "./Logo.astro";
 import CartIcon from "./CartIcon.svelte";
 ---
 
 <header class="sticky top-0 z-40">
-  <div class="border-b bg-white/70 py-3 backdrop-blur-2xl">
-    <nav class="container grid grid-cols-3 items-center">
-      <a href="/">
-        <span class="sr-only">Logo</span>
-        <Logo />
-      </a>
-      <h1
-        class="flex justify-center text-sm font-semibold text-gray-900 sm:text-xl"
+  <div class="container border-b bg-white/70 py-3 backdrop-blur-2xl">
+    <nav style="position: relative" class="containeritems-center">
+      <div
+        style="margin: 0; -ms-transform: translateY(70%); transform: translateY(70%); float: right;"
       >
-        Astro 🧑‍🚀 Shopify
-      </h1>
-      <div class="justify-self-end">
         <CartIcon client:load />
+      </div>
+      <div style="width: 200px; text-align: center; margin: 0 auto;">
+        <h1 class="TitlteFont">STRØNK</h1>
+        <h3 class="TitlteFont2">Climbing</h3>
       </div>
     </nav>
   </div>

@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StrengthCalc from "../../components/StrengthCalc.tsx";
+---
+
+<BaseLayout title="Strength calculator">
+  <main>
+    <center><h1 class="SketchyFont">Strength calculator</h1></center>
+    <div class="content">
+      <p>
+        This tool helps to estimate your strength-to-weight ratio based on a
+        linear regression using <a
+          class="NoUnderline"
+          href="https://static1.squarespace.com/static/56830ef60ab377cb562da204/t/5f99cebdafb139471fbafd67/1603915468772/BF_strength_climbing_correlations-MAR282018web.pdf"
+          >Beast Climbing</a
+        > research data. Methods used can be seen in the research, Optimizing Muscular
+        Strength-to-Weight Ratios in Rock Climbing. Estimations are based on maximum
+        volatile contraction (MVC) peak forces for each grade. This tool is applicable
+        only for 20mm edges.
+      </p>
+    </div>
+
+    <img hidden src="/img/hand.png" alt="Hand" />
+    <br />
+    <StrengthCalc client:idle />
+  </main>
+</BaseLayout>
+<style>
+  .wrapper {
+    display: grid;
+    grid-template-columns: 450px 450px;
+  }
+  main {
+    margin: auto;
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 4rem;
+    line-height: 1;
+    text-align: center;
+  }
+  .hover-content {
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  .hover-content:hover {
+    background: WhiteSmoke;
+    cursor: pointer;
+  }
+</style>

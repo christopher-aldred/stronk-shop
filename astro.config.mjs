@@ -7,6 +7,9 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 import svelte from "@astrojs/svelte";
 
+import react from "@astrojs/react";
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
   output: "server",
@@ -18,5 +21,11 @@ export default defineConfig({
       },
     }),
     svelte(),
+    react(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
   ],
 });

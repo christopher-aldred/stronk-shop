@@ -1,8 +1,10 @@
 ---
+import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CartDrawer from "../components/CartDrawer.svelte";
 import AnnouncementBar from "../components/AnnouncementBar.astro";
+import NavBar from "../components/NavBar.tsx";
 
 export interface Props {
   title: string;
@@ -28,12 +30,85 @@ const { title, description = defaultDesc } = Astro.props as Props;
     </style>
   </head>
   <body>
-    <AnnouncementBar />
+    <!--<AnnouncementBar />-->
     <CartDrawer client:idle />
     <Header />
-    <main>
-      <slot />
-    </main>
+    <div class="container">
+      <NavBar client:idle />
+      <main>
+        <slot />
+      </main>
+    </div>
+
     <Footer />
   </body>
 </html>
+
+<style is:global>
+  p {
+    display: inline;
+  }
+  .container {
+    max-width: 900px;
+  }
+  :root {
+    --accent: 97, 244, 222;
+    --accent-light: 110, 120, 255;
+    --accent-dark: 49, 10, 150;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-size: 224px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  @font-face {
+    font-family: "SketchyFontB";
+    src: url(/fonts/!SketchyTimes-b.ttf);
+  }
+  .TitlteFont {
+    font-family: SketchyFontB;
+    font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .TitlteFont2 {
+    font-family: SketchyFontB;
+    font-size: 30px;
+    margin-top: -20px;
+  }
+  .NoUnderline {
+    text-decoration: none;
+  }
+  .content {
+    background: WhiteSmoke;
+    border-radius: 5px;
+    padding: 15px;
+  }
+
+  @font-face {
+    font-family: "SketchyFont";
+    src: url(/fonts/!sketchytimes.ttf);
+  }
+  .SketchyFont {
+    font-family: SketchyFont;
+    font-size: 50px;
+    color: black;
+  }
+</style>
