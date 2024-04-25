@@ -33,7 +33,7 @@ const { title, description = defaultDesc } = Astro.props as Props;
     <!--<AnnouncementBar />-->
     <CartDrawer client:idle />
     <Header />
-    <div class="container">
+    <div class="container" style="max-width: 900px;">
       <NavBar client:idle />
       <main>
         <slot />
@@ -47,9 +47,6 @@ const { title, description = defaultDesc } = Astro.props as Props;
 <style is:global>
   p {
     display: inline;
-  }
-  .container {
-    max-width: 900px;
   }
   :root {
     --accent: 97, 244, 222;
