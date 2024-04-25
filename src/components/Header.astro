@@ -3,17 +3,23 @@ import CartIcon from "./CartIcon.svelte";
 ---
 
 <header class="sticky top-0 z-40">
-  <div class="border-b bg-white/70 py-3 backdrop-blur-2xl">
-    <nav style="position: relative" class="containeritems-center">
+  <div
+    style="height: 100px;"
+    class="border-b bg-white/70 py-3 backdrop-blur-2xl"
+  >
+    <nav
+      style="height: 100px; position: relative"
+      class="containeritems-center"
+    >
       <div
-        style="margin: 0; -ms-transform: translateY(60%); transform: translateY(60%); float: right;"
+        style="width: 60px; position: relative; padding-top: 37px; float: right;"
       >
         <div class="me-4">
           <CartIcon client:load />
         </div>
       </div>
       <div
-        style="width: 200px; text-align: center; margin: 0 auto; cursor: pointer;"
+        style=" width: 250px; text-align: center; margin: 0 auto; cursor: pointer;"
         onclick="location.href = '/';"
       >
         <h1 class="TitlteFont">STRØNK</h1>

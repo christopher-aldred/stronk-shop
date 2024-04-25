@@ -1,5 +1,4 @@
 ---
-import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CartDrawer from "../components/CartDrawer.svelte";
@@ -35,6 +34,11 @@ const { title, description = defaultDesc } = Astro.props as Props;
     <Header />
     <div class="container" style="max-width: 900px;">
       <NavBar client:idle />
+    </div>
+    <hr
+      style="margin-top: 5px; background-color: Gainsboro; height: 1px; border: 0;"
+    />
+    <div class="container" style="max-width: 900px;">
       <main>
         <slot />
       </main>
@@ -42,70 +46,81 @@ const { title, description = defaultDesc } = Astro.props as Props;
 
     <Footer />
   </body>
+
+  <style is:global>
+    .hover-content {
+      border: 2px solid lightgrey;
+      border-radius: 5px;
+      padding: 15px;
+    }
+    .hover-content:hover {
+      background: WhiteSmoke;
+      cursor: pointer;
+    }
+    p {
+      display: inline;
+    }
+    a:hover {
+      color: DodgerBlue;
+    }
+    :root {
+      --accent: 97, 244, 222;
+      --accent-light: 110, 120, 255;
+      --accent-dark: 49, 10, 150;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+      );
+    }
+    html {
+      font-family: system-ui, sans-serif;
+      background-size: 224px;
+    }
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+
+    @font-face {
+      font-family: "SketchyFontB";
+      src: url(/fonts/!SketchyTimes-b.ttf);
+    }
+    .TitlteFont {
+      font-family: SketchyFontB;
+      font-size: 60px;
+      margin-top: -16px;
+    }
+    .TitlteFont2 {
+      font-family: SketchyFontB;
+      font-size: 25px;
+      margin-top: -30px;
+    }
+    .NoUnderline {
+      text-decoration: none;
+    }
+    .content {
+      background: WhiteSmoke;
+      border-radius: 5px;
+      padding: 15px;
+    }
+
+    @font-face {
+      font-family: "SketchyFont";
+      src: url(/fonts/!sketchytimes.ttf);
+    }
+    .SketchyFont {
+      font-family: SketchyFont;
+      font-size: 50px;
+      color: black;
+    }
+  </style>
 </html>
-
-<style is:global>
-  p {
-    display: inline;
-  }
-  :root {
-    --accent: 97, 244, 222;
-    --accent-light: 110, 120, 255;
-    --accent-dark: 49, 10, 150;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background-size: 224px;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-
-  @font-face {
-    font-family: "SketchyFontB";
-    src: url(/fonts/!SketchyTimes-b.ttf);
-  }
-  .TitlteFont {
-    font-family: SketchyFontB;
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .TitlteFont2 {
-    font-family: SketchyFontB;
-    font-size: 30px;
-    margin-top: -20px;
-  }
-  .NoUnderline {
-    text-decoration: none;
-  }
-  .content {
-    background: WhiteSmoke;
-    border-radius: 5px;
-    padding: 15px;
-  }
-
-  @font-face {
-    font-family: "SketchyFont";
-    src: url(/fonts/!sketchytimes.ttf);
-  }
-  .SketchyFont {
-    font-family: SketchyFont;
-    font-size: 50px;
-    color: black;
-  }
-</style>

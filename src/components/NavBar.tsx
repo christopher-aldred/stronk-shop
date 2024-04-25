@@ -1,7 +1,6 @@
 import React from "react";
 import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
-import { IoMdArrowDropdown } from "react-icons/io";
 
 const trainingItems: MenuProps["items"] = [
   {
@@ -22,6 +21,32 @@ const trainingItems: MenuProps["items"] = [
   },
 ];
 
+const socialItems: MenuProps["items"] = [
+  {
+    label: <a href="/training/max-hangs">Instagram</a>,
+    key: "0",
+    disabled: true,
+  },
+  {
+    label: <a href="/training/strength-calc">Youtube</a>,
+    key: "1",
+    disabled: true,
+  },
+];
+
+const shopItems: MenuProps["items"] = [
+  {
+    label: <a href="/training/max-hangs">Finger training</a>,
+    key: "0",
+    disabled: true,
+  },
+  {
+    label: <a href="/training/strength-calc">Clothing</a>,
+    key: "1",
+    disabled: true,
+  },
+];
+
 export default function NavBar() {
   return (
     <>
@@ -32,22 +57,29 @@ export default function NavBar() {
           justifyContent: "space-between",
         }}
       >
-        <a href="/">Shop</a>
+        <Dropdown menu={{ items: shopItems }} placement="bottom">
+          <a style={{ cursor: "pointer" }} href="/">
+            <Space>Shop</Space>
+          </a>
+        </Dropdown>
         <Dropdown
           menu={{ items: trainingItems }}
           placement="bottom"
           trigger={["click"]}
         >
           <a style={{ cursor: "pointer" }} onClick={(e) => e.preventDefault()}>
-            <Space>
-              Training
-              <IoMdArrowDropdown
-                style={{ position: "relative", left: "-5px" }}
-              />
-            </Space>
+            <Space>Training</Space>
           </a>
         </Dropdown>
-        <a href="#">Grade Converter</a>
+        <Dropdown
+          menu={{ items: socialItems }}
+          placement="bottom"
+          trigger={["click"]}
+        >
+          <a style={{ cursor: "pointer" }} onClick={(e) => e.preventDefault()}>
+            <Space>Socials</Space>
+          </a>
+        </Dropdown>
         <a href="#">Login</a>
       </nav>
     </>
