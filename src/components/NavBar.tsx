@@ -62,20 +62,12 @@ export default function NavBar() {
             <Space>Shop</Space>
           </a>
         </Dropdown>
-        <Dropdown
-          menu={{ items: trainingItems }}
-          placement="bottom"
-          trigger={["click"]}
-        >
+        <Dropdown menu={{ items: trainingItems }} placement="bottom">
           <a style={{ cursor: "pointer" }} onClick={(e) => e.preventDefault()}>
             <Space>Training</Space>
           </a>
         </Dropdown>
-        <Dropdown
-          menu={{ items: socialItems }}
-          placement="bottom"
-          trigger={["click"]}
-        >
+        <Dropdown menu={{ items: socialItems }} placement="bottom">
           <a style={{ cursor: "pointer" }} onClick={(e) => e.preventDefault()}>
             <Space>Socials</Space>
           </a>
