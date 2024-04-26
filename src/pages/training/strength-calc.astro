@@ -18,8 +18,6 @@ import StrengthCalc from "../../components/StrengthCalc.tsx";
       only for 20mm edges.
     </p>
   </div>
-
-  <img hidden src="/img/hand.png" alt="Hand" />
   <br />
-  <StrengthCalc client:load />
+  <StrengthCalc client:only="react" />
 </BaseLayout>

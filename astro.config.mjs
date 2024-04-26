@@ -11,13 +11,13 @@ export default defineConfig({
     mode: "standalone",
   }),
   integrations: [
+    react(),
     tailwind({
       config: {
         applyBaseStyles: false,
       },
     }),
     svelte(),
-    react(),
     partytown({
       config: {
         forward: ["dataLayer.push"],
