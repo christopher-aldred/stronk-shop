@@ -28,4 +28,6 @@ export default defineConfig({
       },
     }),
   ],
+  site: "https://stronk-shop.vercel.app",
+  base: "/",
 });
