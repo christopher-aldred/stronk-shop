@@ -1,13 +1,15 @@
 import { defineConfig } from "astro/config";
-import netlify from "@astrojs/netlify";
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
+import node from "@astrojs/node";
 
 export default defineConfig({
   output: "server",
-  adapter: netlify(),
+  adapter: node({
+    mode: "standalone",
+  }),
   integrations: [
     tailwind({
       config: {
@@ -22,6 +24,4 @@ export default defineConfig({
       },
     }),
   ],
-  site: "https://stronk-shop.vercel.app",
-  base: "/",
 });
