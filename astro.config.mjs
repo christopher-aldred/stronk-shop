@@ -3,13 +3,16 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
-import node from "@astrojs/node";
+//import node from "@astrojs/node";
+import vercel from "@astrojs/vercel/serverless";
 
 export default defineConfig({
+  // server: { port: 8080, host: true },
   output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: vercel(),
+  // adapter: node({
+  //   mode: "standalone",
+  // }),
   integrations: [
     react(),
     tailwind({
