@@ -17,12 +17,37 @@ const { title, description = defaultDesc } = Astro.props as Props;
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <head
+    ><!-- Google tag (gtag.js) -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RDCHM8GXVL"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RDCHM8GXVL");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Content to help climbers get STRØNK" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="any"
+      href="favicon.png"
+    />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>STRØNK - {title}</title>
     <meta name="description" content={description} />
     <style is:global>
       @import "../styles/global.css";
