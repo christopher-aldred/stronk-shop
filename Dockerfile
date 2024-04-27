@@ -1,6 +1,4 @@
-ARG NODE_VERSION=20
-
-FROM node:${NODE_VERSION} as build
+FROM node:20-slim as build
 
 ARG BUN_VERSION=1.0.15
 
